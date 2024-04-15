@@ -1,77 +1,42 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { toast } from "react-hot-toast"
 
 const initialState = {
-  cart: localStorage.getItem("cart")
-    ? JSON.parse(localStorage.getItem("cart"))
-    : [],
-  total: localStorage.getItem("total")
-    ? JSON.parse(localStorage.getItem("total"))
-    : 0,
-  totalItems: localStorage.getItem("totalItems")
-    ? JSON.parse(localStorage.getItem("totalItems"))
-    : 0,
-    loading:false,
+  step: 1,
+  course: null,
+  editCourse: false,
+  paymentLoading: false,
 }
 
-const cartSlice = createSlice({
-  name: "cart",
+const courseSlice = createSlice({
+  name: "course",
   initialState,
   reducers: {
-    
-    addToCart: (state, action) => {
-      const course = action.payload
-      const index = state.cart.findIndex((item) => item._id === course._id)
-
-      if (index >= 0) {
-        // If the course is already in the cart, do not modify the quantity
-        toast.error("Course already in cart")
-        return
-      }
-      // If the course is not in the cart, add it to the cart
-      state.cart.push(course)
-      // Update the total quantity and price
-      state.totalItems++
-      state.total += course.price
-      // Update to localstorage
-      
-      localStorage.setItem("total", JSON.stringify(state.total))
-      localStorage.setItem("totalItems", JSON.stringify(state.totalItems))
-      // show toast
-      toast.success("Course added to cart")
+    setStep: (state, action) => {
+      state.step = action.payload
     },
-    removeFromCart: (state, action) => {
-      const courseId = action.payload
-      const index = state.cart.findIndex((item) => item._id === courseId)
-
-      if (index >= 0) {
-        // If the course is found in the cart, remove it
-        state.totalItems--
-        state.total -= state.cart[index].price
-        state.cart.splice(index, 1)
-        // Update to localstorage
-        localStorage.setItem("cart", JSON.stringify(state.cart))
-        localStorage.setItem("total", JSON.stringify(state.total))
-        localStorage.setItem("totalItems", JSON.stringify(state.totalItems))
-        // show toast
-        toast.success("Course removed from cart")
-      }
+    setCourse: (state, action) => {
+      state.course = action.payload
     },
-    resetCart: (state) => {
-      state.cart = []
-      state.total = 0
-      state.totalItems = 0
-      // Update to localstorage
-      localStorage.removeItem("cart")
-      localStorage.removeItem("total")
-      localStorage.removeItem("totalItems")
+    setEditCourse: (state, action) => {
+      state.editCourse = action.payload
     },
-    setLoading(state, value) {
-      state.loading = value.payload;
+    setPaymentLoading: (state, action) => {
+      state.paymentLoading = action.payload
+    },
+    resetCourseState: (state) => {
+      state.step = 1
+      state.course = null
+      state.editCourse = false
     },
   },
 })
 
-export const { addToCart, removeFromCart, resetCart,setLoading } = cartSlice.actions
+export const {
+  setStep,
+  setCourse,
+  setEditCourse,
+  setPaymentLoading,
+  resetCourseState,
+} = courseSlice.actions
 
-export default cartSlice.reducer
+export default courseSlice.reducer
