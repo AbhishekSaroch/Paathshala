@@ -1,9 +1,12 @@
 import React from "react";
-import { FaCheck } from "react-icons/fa";
 import { useSelector } from "react-redux";
-import CourseInformationForm from "./CourseInformation/CourseInformationForm";
+// import { FaCheck } from "react-icons/fa";
+import CourseInformation from "./CourseInformation/CourseInformationForm";
+// import CourseBuilderForm from "./CourseBuilder/CourseBuilderForm";
+// import PublishCourse from "./PublishCourse/index"
 const RenderSteps = () => {
   const { step } = useSelector((state) => state.course);
+  console.log("step value ->", step);
   const steps = [
     {
       id: 1,
@@ -15,53 +18,54 @@ const RenderSteps = () => {
     },
     {
       id: 3,
-      title: "Course Publish",
+      title: "Publish",
     },
   ];
   return (
     <>
-      <div>
-        {steps.map((item,index) => (
-          <>
-            <div key={index}>
-              <div
-              key={index}
-                className={`${
-                  step == item.id
-                    ? "bg-yellow-900 border-yellow-50 text-yellow-50 "
-                    : "border-richblack-700 bg-richblack-800 text-richblack-300 "
-                }`}
-              >
-                {step > item.id ? <FaCheck /> : item.id}
-              </div>
-            </div>
-            {/* DASHES */}
-          </>
-          
-        ))}
+      <div className="">
         <div>
-              {steps.map((item,index) => (
-                <>
-                  <div className="text-white"
-                  key={index}
-                  >
-                    <p key={index}>{item.title}</p>
-                  </div>
-                </>
-              ))}
-            </div>
+          {steps.map((items,index) => (
+            <>
+              <div key={index}>
+                <div
+                  className={`${
+                    step == items.id
+                      ? "bg-yellow-700 border-yellow-50 text-yellow-50 "
+                      : "border-richblack-700 bg-richblack-800 text-richblack-300"
+                  } `}
+                >
+                  {/* {step > items.id ? <FaCheck /> : items.id} */}
+                </div>
+              </div>
+              {/* adding code for dashes between labels */}
+              {items.id !== steps.length}
+            </>
+          ))}
+        </div>
+        <div>
+         {
+          steps.map((item,index)=>(
+       
+            <div key={index}>
+              <p key={index}>{item.title}</p>
+              </div>  
+          ))
+         }
+        </div>
       </div>
       {
-        step==1 && <CourseInformationForm />
-      }
-      {/* {
-        step==2 && <CourseBuilder />
+        step==1 && <CourseInformation />
       }
       {
-        step==1 && <CoursePublish />
-      } */}
+        // step==2 && <CourseBuilderForm />
+      }
+      {
+        // step==3 && <PublishCourse />
+      } 
     </>
   );
 };
 
 export default RenderSteps;
+DT20245507541 

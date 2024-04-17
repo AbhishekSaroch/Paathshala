@@ -34,8 +34,6 @@ exports.createCourse = async (req, res) => {
       !courseDescription ||
       !whatYouWillLearn ||
       !price ||
-      !tag ||
-      !thumbnail ||
       !category
     ) {
       return res.status(400).json({
