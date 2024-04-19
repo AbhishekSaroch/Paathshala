@@ -16,6 +16,7 @@ import EnrolledCourses from "./components/core/Dashboard/EnrolledCourses";
 import PrivateRoute from "./components/core/auth/PrivateRoute";
 import Cart from "./components/core/Dashboard/Cart";
 import AddCourse from "./components/core/Dashboard/AddCourse";
+import MyCourses from "./components/core/Dashboard/MyCourses";
 function App() {
   return (
     <div className="w-screen min-h-screen bg-richblack-900 flex flex-col font-inter">
@@ -43,7 +44,9 @@ function App() {
         <Route path="/dashboard/my-profile" element={<MyProfile />} />
         <Route path="dashboard/enrolled-courses" element={<EnrolledCourses />}/>
         <Route path="/dashboard/cart" element={<Cart />}/>
+        <Route path="/dashboard/my-courses" element={<MyCourses />}/>
         <Route path="/dashboard/add-course" element={<AddCourse />}/>
+
         </Route>
        </Routes>
     </div>

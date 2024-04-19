@@ -2,8 +2,8 @@ import React from "react";
 import { useSelector } from "react-redux";
 // import { FaCheck } from "react-icons/fa";
 import CourseInformation from "./CourseInformation/CourseInformationForm";
-// import CourseBuilderForm from "./CourseBuilder/CourseBuilderForm";
-// import PublishCourse from "./PublishCourse/index"
+import CourseBuilderForm from "./CourseBuilder/CourseBuilderForm";
+import PublishCourse from "./PublishCourse";
 const RenderSteps = () => {
   const { step } = useSelector((state) => state.course);
   console.log("step value ->", step);
@@ -58,14 +58,13 @@ const RenderSteps = () => {
         step==1 && <CourseInformation />
       }
       {
-        // step==2 && <CourseBuilderForm />
+        step==2 && <CourseBuilderForm />
       }
       {
-        // step==3 && <PublishCourse />
+        step==3 && <PublishCourse />
       } 
     </>
   );
 };
 
 export default RenderSteps;
-DT20245507541 
