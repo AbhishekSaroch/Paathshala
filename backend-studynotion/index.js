@@ -21,7 +21,8 @@ database.dbConnect();
 //middlewares
 const allowedOrigins = [
 	'http://localhost:3000',
-	'https://paathshala.vercel.app/'
+	'https://paathshala.vercel.app/',
+	'https://paathshala-poxp375e1-abhisheksarochs-projects.vercel.app/'
   ];
 app.use(cookieParser());
 app.use(cors({
