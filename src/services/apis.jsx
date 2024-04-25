@@ -1,4 +1,4 @@
-const BASE_URL ="http://localhost:4000/api/v1"
+const BASE_URL ="https://backend-pathshala.onrender.com/api/v1"
 console.log("BASE URL IS",BASE_URL)
 // AUTH ENDPOINTS
 export const endpoints = {
