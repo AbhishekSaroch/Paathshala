@@ -1,6 +1,7 @@
 const SubSection = require("../models/SubSection");
 const Section = require("../models/Section");
 const uploadVideo = require("../utils/imageUploader");
+const {uploadImageToCloudinary}=require("../utils/imageUploader")
 require("dotenv").config();
 
 exports.createSubSection = async (req, res) => {
@@ -18,17 +19,17 @@ exports.createSubSection = async (req, res) => {
     console.log(video)
 
     // Upload the video file to Cloudinary
-    // const uploadDetails = await uploadImageToCloudinary(
-    //   video,
-    //   process.env.FOLDER_NAME
-    // )
-    // console.log(uploadDetails)
+    const uploadDetails = await uploadImageToCloudinary(
+      video,
+      process.env.FOLDER_NAME
+    )
+    console.log(uploadDetails)
     // Create a new sub-section with the necessary information
     const SubSectionDetails = await SubSection.create({
       title: title,
-      // timeDuration: `${uploadDetails.duration}`,
+      timeDuration: `${uploadDetails.duration}`,
       description: description,
-      videoUrl: "Helo",
+      videoUrl: uploadDetails.secure_url,
     })
 
     // Update the corresponding section with the newly created sub-section
