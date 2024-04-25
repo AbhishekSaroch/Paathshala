@@ -7,7 +7,9 @@ const {
   getAllCourses,
   getCourseDetails,
   editCourse,
-  getInstructorCourses
+  getInstructorCourses,
+  getFullCourseDetails,
+  deleteCourse,
 } = require("../controllers/Course");
 
 // categories controller import
@@ -62,6 +64,8 @@ router.post("/getCourseDetails", getCourseDetails)
 router.post("/editCourse", editCourse)
 router.get("/getInstructorCourses", auth, isInstructor, getInstructorCourses)
 // 
+router.delete("/deleteCourse", deleteCourse)
+router.post("/getFullCourseDetails", auth, getFullCourseDetails)
 
 // ********************************************************************************************************
 //                                      Category routes (Only by Admin)
