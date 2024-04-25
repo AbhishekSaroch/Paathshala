@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react"
 import { BiInfoCircle } from "react-icons/bi"
 import { HiOutlineGlobeAlt } from "react-icons/hi"
-import { ReactMarkdown } from "react-markdown/lib/react-markdown"
+import ReactMarkdown from 'react-markdown';
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate, useParams } from "react-router-dom"
 
-import ConfirmationModal from "../components/Common/ConfirmationModal"
-import Footer from "../components/Common/Footer"
-import RatingStars from "../components/Common/RatingStars"
+import ConfirmationModal from "../components/common/ConfirmationModal"
+import Footer from "../components/common/Footer"
+import RatingStars from "../components/common/RatingStars"
 import CourseAccordionBar from "../components/core/Course/CourseAccordionBar"
 import CourseDetailsCard from "../components/core/Course/CourseDetailsCard"
 import { formatDate } from "../services/formatDate"
 import { fetchCourseDetails } from "../services/operations/courseDetailsAPI"
-import { BuyCourse } from "../services/operations/studentFeaturesAPI"
+import { BuyCourse } from "../services/operations/studentFeaturesApi"
 import GetAvgRating from "../utils/avgRating"
 import Error from "./Error"
 
