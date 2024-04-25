@@ -11,7 +11,7 @@ const mailSender=async(email,title,body)=>{
             }
         })
         let info=await transporter.sendMail({
-            from:"StudyNotion || Abhishek Sharma",
+            from:"Paathshala || Abhishek Sharma",
             to: `${email}`,
             subject: `${title}`,
             html: `${body}`,

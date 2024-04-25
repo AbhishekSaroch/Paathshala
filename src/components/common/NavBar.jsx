@@ -73,7 +73,7 @@ function Navbar() {
           className="text-white font-serif text-3xl font-bold tracking-wide shadow-lg"
         >
           पाठशाला
-        </Link>
+        </Link> 
         {/* Navigation links */}
         <nav className="hidden md:block">
           <ul className="flex gap-x-6 text-richblack-25">

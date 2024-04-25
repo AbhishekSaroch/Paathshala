@@ -128,7 +128,7 @@ const Home = () => {
             </div>
             <div className="flex flex-col items-start w-[45%]">
               <div className="text-[16px]">
-                The modern StudyNotion is the dictates its own terms. Today, to
+                The modern Paathshala is the dictates its own terms. Today, to
                 be a competitive specialist requires more than professional
                 skills.
               </div>
