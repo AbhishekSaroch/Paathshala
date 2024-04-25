@@ -38,7 +38,7 @@ const {
     createRating,
     getAverageRating,
     getAllRatingAndReviews,
-  } = require("../controllers/RatingAndReview")
+  } = require("../controllers/ratingAndReview")
 
   // Importing Middlewares
 const { auth, isInstructor, isStudent, isAdmin } = require("../middlewares/auth")
