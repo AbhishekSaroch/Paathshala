@@ -24,7 +24,7 @@ exports.resetPasswordToken = async (req, res) => {
       },
       { new: true }
     );
-    const url = `http://localhost:3000/update-password/${token}`;
+    const url = `https://paathshala.vercel.app/${token}`;
     await mailSender(
       email,
       "Password Reset Link",
