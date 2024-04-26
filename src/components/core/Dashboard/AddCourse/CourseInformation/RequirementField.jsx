@@ -35,7 +35,7 @@ const RequirementField = ({
   };
   return (
     <div>
-      <label htmlFor={name}>
+      <label htmlFor={name} className="text-richblack-25">
         {label}
         <sup>*</sup>
       </label>
@@ -46,7 +46,7 @@ const RequirementField = ({
           value={requirement}
           onChange={(e) => setRequirement(e.target.value)}
           className="w-full text-black"
-
+          placeholder="Enter Course Requirements/Instructions"
         />
         <button
           onClick={handleAddRequirement}
