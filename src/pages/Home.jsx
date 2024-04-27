@@ -51,54 +51,31 @@ const Home = () => {
           </video>
         </div>
         {/* code section1 */}
-        <div >
-          <CodeBlocks
-            position={"lg:flex-row sm:flex-col"}
-            heading={
-              <div className="text-4xl font-semibold">
-                Unlock Your <HighlightText text={"coding Potential"} />
-                with our online courses
-              </div>
-            }
-            subheading={
-              "Our courses are designed and taught by industry experts who have years of experience in coding and are passionate about sharing their knowledge with you."
-            }
-            ctabutton1={{
-              btnText: "Try it yourself",
-              linkto: "/signup",
-              active: true,
-            }}
-            ctabutton2={{
-              btnText: "learn more",
-              linkto: "/login",
-              active: false,
-            }}
-            codeblock={`<<!DOCTYPE html>\n<html>\nhead><title>Example</title><linkrel="stylesheet"href="styles.css">\n</head>\n<body>\n<h1><ahref="/">Header</a>\n</h1>\n<nav><ahref="one/">One</a><ahref="two/">Two</a><ahref="three/">Three</a>\n</nav>`}
-            codeColor={"text-yellow-25"}
-          />
+        <div>
           <CodeBlocks
             position={"lg:flex-row-reverse"}
             heading={
-              <div className="text-4xl font-semibold">
+              <div className="w-[100%] text-4xl font-semibold lg:w-[50%]">
                 Start
-                <HighlightText text={" Coding In Seconds"} />
+                <HighlightText text={"coding in seconds"} />
               </div>
             }
             subheading={
-              "Our courses are designed and taught by industry experts who have years of experience in coding and are passionate about sharing their knowledge with you."
+              "Go ahead, give it a try. Our hands-on learning environment means you'll be writing real code from your very first lesson."
             }
-            ctabutton1={{
-              btnText: "TryIt yourself",
-              linkto: "/signup",
+            ctabtn1={{
+              btnText: "Continue Lesson",
+              link: "/signup",
               active: true,
             }}
-            ctabutton2={{
-              btnText: "learn more",
-              linkto: "/login",
+            ctabtn2={{
+              btnText: "Learn More",
+              link: "/signup",
               active: false,
             }}
-            codeblock={`<<!DOCTYPE html>\n<html>\nhead><title>Example</title><linkrel="stylesheet"href="styles.css">\n</head>\n<body>\n<h1><ahref="/">Header</a>\n</h1>\n<nav><ahref="one/">One</a><ahref="two/">Two</a><ahref="three/">Three</a>\n</nav>`}
-            codeColor={"text-yellow-25"}
+            codeColor={"text-white"}
+            codeblock={`import React from "react";\n import CTAButton from "./Button";\nimport TypeAnimation from "react-type";\nimport { FaArrowRight } from "react-icons/fa";\n\nconst Home = () => {\nreturn (\n<div>Home</div>\n)\n}\nexport default Home;`}
+            backgroundGradient={<div className="codeblock2 absolute"></div>}
           />
         </div>
         <ExploreMore />
