@@ -189,9 +189,9 @@ function SignupForm() {
               className="absolute right-3 top-[38px] z-[10] cursor-pointer"
             >
               {showConfirmPassword ? (
-                <AiOutlineEye fontSize={24} fill="#AFB2BF" />
-              ) : (
                 <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" />
+              ) : (
+                 <AiOutlineEye fontSize={24} fill="#AFB2BF" />
               )}
             </span>
           </label>
